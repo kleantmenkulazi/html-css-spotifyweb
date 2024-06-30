@@ -9,80 +9,95 @@ html{
 }
 /* General */
 :root{
-    --main-purple: #9792E4; 
+    --lower-height:100px;
+    --aside-width:200px;
 }
 .container{
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 10px;
+padding: 0 10px;
 }
 .my-row{
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -10px;
-    margin-right: -10px;
+ display: flex;
+ flex-wrap: wrap;
+ margin-left: -10px;
+ margin-right: -10px;
 }
-.my-row > .my-col {
-    width: calc(100% - 20px);
-    margin-left: 10px;
-    margin-right: 10px;
+.my-col{
+    width: calc((100% / 6) - 20px);
+    margin: 0 10px;
+}
+/* Macro */
+#upper{
+    height: calc(100vh - var(--lower-height));
+    display: flex;
+}
+#upper > aside {
+    width: var(--aside-width);
+}
+#upper > main {
+    width: calc(100% - var(--aside-width));
+    overflow-y: auto;
+}
+#upper > main > * {
     margin-bottom: 20px;
 }
-img{
-    max-width: 100%;
-}
-/* Header fisso col bottone*/
-#header-parte-fissa{
-    background-color: black;
-    padding: 10px;
-
-}
-.my-btn{
-    background-color: black;
+#upper > main > header {
+    text-align: right;
+    position: sticky;
+    top: 0;
+    
+    background-color: rgba(0, 0, 0, .5);
     color: white;
-    display: inline-block;
-    border-radius: 50px bold white;
-    border-color: 1px bold white;
-    padding: 6px 10px;
-    text-decoration: none;
-    display: flex;
-    justify-content: flex-end;
+    padding: 20px 10px;
+    
 }
 
-/* Main che scrolla */
-#corpo-tracce-parte-che-scrolla{
-    background-color: darkgrey;
+
+
+#lower{
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+/* Responsive */
+
+/* Primo step */
+@media screen and (max-width: 1100px) {
+    
 }
 
-/* Strisciata di link */
+/* Secondo step */
+@media screen and (max-width: 700px) {
+    
+}
+/* Terzo step */
+@media screen and (max-width: 600px) {
+    #upper > aside {
+        width: 50px;
+    }
+    #upper > main {
+        width: calc(100% - 50px);
+    }
+    
+}
 
-li{
-    display: inline-block;
-    display: flex;
-    justify-content: space-around;
-    list-style-type: none;
-    text-decoration: none;
-    color: grey;
+
+
+/* Debug */
+.debug #upper{
+    background-color: lightcoral;
 }
-.lista-di-link{
-    display: flex;
-    justify-content: space-around;
-    color: white;
+.debug #upper > aside {
+    background-color: green;
 }
-.lista-di-link ul{
-    list-style: none;
+.debug #upper > main {
+    background-color: blue;
 }
-.lista-di-link ul li{
-    display: inline-block;
+.debug #lower{
+    background-color: aqua;
 }
-.lista-di-link ul li a{
-    display: inline-block;
-    padding: 30px 8px;
-    color: grey;
-    text-decoration: none;
+.debug #lower > *{
+    background-color: fuchsia;
 }
-/* Prima parte di card: Tracce */
-.my-row{
-    display: flex;
-    justify-content: space-around;
+.debug .my-col{
+    background-color: yellow;
 }

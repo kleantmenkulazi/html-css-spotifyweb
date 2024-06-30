@@ -44,40 +44,170 @@ padding: 0 10px;
     text-align: right;
     position: sticky;
     top: 0;
-    
     background-color: rgba(0, 0, 0, .5);
     color: white;
     padding: 20px 10px;
+    
+}
+#upper > main  nav > ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+#upper > main  nav > ul > li > a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 10px;
     
 }
 
 
 
 #lower{
-    height: 150px;
+    height: var(--lower-height);
     display: flex;
     justify-content: space-between;
+    position: relative;
+    z-index: 1;
 }
+/* Aside */
+aside {
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+}
+aside #aside-top {
+    
+}
+aside #aside-top .logo-container{
+    padding: 10px 5px;
+}
+aside #aside-top .logo-container .mobile{
+    display: none;
+}
+aside #aside-top .logo-container .mobile{
+    display: none;
+}
+aside #aside-top nav ul{
+    list-style: none;
+}
+aside #aside-top nav ul li a{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+}
+aside #aside-middle {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+aside #aside-middle > h4{
+    
+    
+}
+aside #aside-middle > div{
+    
+    
+}
+aside #aside-middle ul{
+    overflow-y: auto;
+    flex-grow: 1;
+}
+aside #aside-bottom {
+    
+}
+aside #aside-bottom > *{
+    padding: 5px;
+}
+aside #aside-bottom > :first-child{
+    border-bottom: 1px solid grey;
+}
+/* Footer */
+#footer-center{
+    width: 35%;
+}
+#footer-center ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+#footer-center ul li{
+    padding: 4px 20px;
+}
+#footer-center > :first-child ul li button {
+    border: none;
+    background: none;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+}
+#footer-center > :last-child{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 0.75rem;
+}
+#footer-center > :last-child #timing{
+    flex-grow: 1;
+    background-color: grey;
+    height: 4px;
+    margin: 0 10px;
+    border-radius: 2px;
+}
+#footer-center > :last-child #timing > *{
+    background-color: lightyellow;
+    width: 20%;
+    height: 4px;
+    border-radius: 2px;
+}
+
+
+
+
 /* Responsive */
 
 /* Primo step */
 @media screen and (max-width: 1100px) {
-    
+    .my-col{
+        width: calc(25% - 20px);
+    }
 }
 
 /* Secondo step */
 @media screen and (max-width: 700px) {
-    
+    .my-col{
+        width: calc(50% - 20px);
+    }
 }
 /* Terzo step */
 @media screen and (max-width: 600px) {
-    #upper > aside {
+    /*#upper > aside {
         width: 50px;
     }
     #upper > main {
         width: calc(100% - 50px);
     }
-    
+    */
+    :root{
+        --aside-width: 50px;
+    }
+    aside #aside-top .logo-container .mobile{
+        display: block;
+    }
+    aside #aside-top .logo-container .desktop,
+    aside #aside-top nav ul li a > span,
+    aside #aside-middle > *,
+    aside #aside-middle > * > span {
+        display: none;
+
+    }
+
 }
 
 
@@ -100,4 +230,17 @@ padding: 0 10px;
 }
 .debug .my-col{
     background-color: yellow;
+}
+.debug #aside-top{
+    background-color: orange;
+}
+.debug #aside-middle{
+    background-color: crimson;
+    padding: 10px;
+}
+.debug aside #aside-middle ul{
+    background-color: antiquewhite;
+ }
+.debug #aside-bottom{
+    background-color: lightsalmon;
 }

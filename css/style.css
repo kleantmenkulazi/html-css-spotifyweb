@@ -9,7 +9,7 @@ html{
 }
 /* General */
 :root{
-    --lower-height:100px;
+    --lower-height:50px;
     --aside-width:200px;
 }
 .container{
@@ -25,6 +25,46 @@ padding: 0 10px;
     width: calc((100% / 6) - 20px);
     margin: 0 10px;
 }
+.my-row .my-col > img {
+    object-fit: cover;
+    width: 100%;
+    height: calc(100%-300px)%;
+ }
+ .my-row .my-col > h5 {
+    text-align: center;
+    color: white;
+    padding-top: 5px;
+ }
+ .my-row .my-col > h6 {
+    text-align: center;
+    color: grey;
+    padding-top: 10px;
+ }
+ /* Header */
+ header > nav > a{
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: white;
+ }
+ header > nav > a:hover{
+    height: 40px;
+    opacity: 1;
+ }
+ .container.nome-sezione > h2{
+    color: white;
+    padding-top: 10px;
+ }
+ .container.nome-sezione > h6{
+    color: grey;
+    padding-top: 5px;
+    padding-bottom: 10px;
+ }
+ .container.recently-played > h2{
+    color: white;
+    padding-bottom: 10px;
+ }
 /* Macro */
 #upper{
     height: calc(100vh - var(--lower-height));
@@ -56,14 +96,13 @@ padding: 0 10px;
     flex-wrap: wrap;
     
 }
-#upper > main  nav > ul > li > a {
+#upper > main nav > ul > li > a {
     color: white;
     text-decoration: none;
     display: inline-block;
     padding: 5px 10px;
     
 }
-
 
 
 #lower{
@@ -100,6 +139,10 @@ aside #aside-top nav ul li a{
     color: white;
     padding: 5px;
 }
+aside #aside-top nav ul li a:hover {
+    color: white;
+    opacity: 1;
+}
 aside #aside-middle {
     flex-grow: 1;
     display: flex;
@@ -127,6 +170,47 @@ aside #aside-bottom > *{
 aside #aside-bottom > :first-child{
     border-bottom: 1px solid grey;
 }
+aside #aside-bottom > :first-child > *{
+    color: grey;
+}
+aside #aside-bottom > :last-child > i {
+    color: grey;
+    padding-top: 5px;
+}
+aside #aside-bottom > :last-child > span {
+    color: white;
+    padding-top: 5px;
+}
+aside #aside-middle > h4 {
+    color: white;
+    padding-bottom: 8px;
+    
+}
+aside #aside-middle > div > a > * {
+    color: grey;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 10px;
+    
+}
+aside #aside-middle > div > a > *:hover {
+    color:white;
+    opacity: 1;
+    
+}
+aside #aside-middle > ul > li > a {
+    color: grey;
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 10px;
+    
+}
+aside #aside-middle > ul > li > a:hover {
+    color:white;
+    opacity: 1;
+    
+}
+
 /* Footer */
 #footer-center{
     width: 35%;
@@ -217,30 +301,30 @@ aside #aside-bottom > :first-child{
     background-color: lightcoral;
 }
 .debug #upper > aside {
-    background-color: green;
+    background-color: grey;
 }
 .debug #upper > main {
-    background-color: blue;
+    background-color: rgb(45, 48, 51);
 }
 .debug #lower{
-    background-color: aqua;
+    background-color: rgb(41, 33, 33);
 }
 .debug #lower > *{
-    background-color: fuchsia;
+    background-color: rgb(41, 33, 33);
 }
 .debug .my-col{
-    background-color: yellow;
+    background-color: rgb(45, 48, 51);
 }
 .debug #aside-top{
-    background-color: orange;
+    background-color: black;
 }
 .debug #aside-middle{
-    background-color: crimson;
+    background-color: black;
     padding: 10px;
 }
 .debug aside #aside-middle ul{
-    background-color: antiquewhite;
+    background-color: black;
  }
 .debug #aside-bottom{
-    background-color: lightsalmon;
+    background-color: black;
 }
